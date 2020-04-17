@@ -124,7 +124,7 @@ Running migrations:
 Setup for our database is done. We can run the application now:
 
 ```bash
-python3 manage.py runserver
+python3 manage.py runserver 0.0.0.0:8000
 ```
 
 You should see the following:
@@ -135,10 +135,11 @@ Performing system checks...
 System check identified no issues (0 silenced).
 April 17, 2020 - 02:09:46
 Django version 3.0.2, using settings 'ButtonProject.settings'
-Starting development server at http://127.0.0.1:8000/
+Starting development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.
 ```
 
 This is great! You can open the application now. Just be careful with two things:
-- Your application is running **on the server**. If you try to open the URL above, it will be trying to open the application on your machine because 127.0.0.1 is the loopback IP address that is always your machine. So you need to replace 127.0.0.1 for the IP or the name of your server.
-- Even if you fix the IP/name of the server, we need to open the right resource on our application such as http://<your_server_name>:8000/basic_app/index.
+- Your application is running **on the server**. To make django listen on port 8000 for connections coming from any interface, we started it with the 0.0.0.0:8000 parameter.
+- If you try to open the URL above, your browser will not understand it. 
+- We need to open the right resource on the right address of the server such as http://<your_server_name>:8000/basic_app/index. 
