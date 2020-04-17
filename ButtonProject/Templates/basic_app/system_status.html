@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>System Status</title>
+  </head>
+  <body>
+    <h2> Current Staus of the system:    {{last_system_status.status}} </h2>
+    <h2> When it was set on this status:   {{last_system_status.date_changed}} </h2>
+    <p>
+
+    <form  action="{% url 'change_system_status' last_system_status.id %}" method = "POST">
+        {% csrf_token %}
+
+        <input id='open_system_buttom' type="submit"  name="open" value="Toggle System">
+    </form>
+
+    <h1>Here are your system_status historic data:</h1>
+    {% if system_status %}
+    <ol>
+      {% for item in system_status %}
+      <li>Info</li>
+        <ul>
+            <li>id : {{item.id}}</li>
+            <li>status : {{item.status}}</li>
+            <li>Date Changed : {{item.date_changed}}</li>
+        </ul>
+        {% endfor %}
+    </ol>
+    {% endif %}
+  </body>
+  <script src='.\open_close.js'>  </script>
+</html>
