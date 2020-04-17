@@ -25,7 +25,8 @@ SECRET_KEY = '@ywlm41py1+^sb8um8ghuy(!+0_mr7pruj5l5no674e(n%vsyk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cscigpu04.bc.edu',
+                 'csci-taapp.bc.edu']
 
 
 # Application definition
