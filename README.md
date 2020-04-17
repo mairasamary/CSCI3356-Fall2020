@@ -62,13 +62,13 @@ Create a folder for git on your home folder and pull the source of our repositor
 cd ~
 mkdir git
 cd ./git
-git clone https://github.com/mairasamary/CSCI3356-Fall2020
+git clone https://github.com/mairasamary/CSCI3356-Spring2020
 ```
 
 Now you should have a folder named **django-deployment-example** under your git folder. Let's investigate it:
 
 ```bash
-cd ./CSCI3356-Fall2020
+cd ./CSCI3356-Spring2020
 ls -l
 
 drwxr-xr-x 5 marquemo staff 4096 Apr 15 21:26 ButtonProject
@@ -140,6 +140,6 @@ Quit the server with CONTROL-C.
 ```
 
 This is great! You can open the application now. Just be careful with two things:
-- Your application is running **on the server**. To make django listen on port 8000 for connections coming from any interface, we started it with the 0.0.0.0:8000 parameter.
+- Your application is running **on the server**. To make Django listen on port 8000 for connections coming from any interface, we started it with the 0.0.0.0:8000 parameter.
 - If you try to open the URL above, your browser will not understand it. 
 - We need to open the right resource on the right address of the server such as http://<your_server_name>:8000/basic_app/index. 
